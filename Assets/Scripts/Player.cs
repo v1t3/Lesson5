@@ -7,14 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<GameObject> allHats = new List<GameObject>();
     [SerializeField] private List<Renderer> rendererList = new List<Renderer>();
 
-    [SerializeField] private Slider sizeSlider;
-    
     [SerializeField] private Text nameField;
-
-    private void Start()
-    {
-        SetSliderValue(transform.localScale.x);
-    }
 
     public void SetHat(int index)
     {
@@ -37,16 +30,6 @@ public class Player : MonoBehaviour
         {
             rendererItem.material = material;
         }
-    }
-
-    private void SetSliderValue(float value)
-    {
-        sizeSlider.value = value;
-    }
-
-    public void SetSize(float value)
-    {
-        transform.localScale = new Vector3(value, value, value);
     }
 
     public void SetName(string value)
